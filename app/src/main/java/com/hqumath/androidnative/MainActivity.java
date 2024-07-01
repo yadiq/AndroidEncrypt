@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.hqumath.androidnative.databinding.ActivityMainBinding;
 import com.hqumath.androidnative.utils.CommonUtil;
 import com.hqumath.androidnative.utils.LogUtil;
-import com.hqumath.androidnative.utils.StringUtil;
 
 import org.freedesktop.liantian.Liantian;
 
@@ -48,6 +47,13 @@ public class MainActivity extends AppCompatActivity {
         LogUtil.d("aes256gcmEncrypt=" + aes256gcmEncrypt);
         String aes256gcmDecrypt = Liantian.aes256gcmDecrypt(aes256gcmEncrypt);
         LogUtil.d("aes256gcmDecrypt=" + aes256gcmDecrypt);
+
+        binding.tvResult.setText("明文：" + msg + "\n加密结果：" +
+                "\nsha1Encrypt=" + sha1Encrypt +
+                "\nhmacSha256Encrypt=" + hmacSha256Encrypt +
+                "\naes128EcbEncrypt=" + aes128EcbEncrypt +
+                "\naes256gcmEncrypt=" + aes256gcmEncrypt
+        );
     }
 
     @Override
